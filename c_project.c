@@ -18,7 +18,7 @@ typedef struct {
     char complaints[200]; // Student's complaints
 } Student;
 
-// Function declarations
+// Function prototype declarations
 void registerStudent();
 void displayStudents();
 void searchStudent();
