@@ -1,30 +1,29 @@
 #include<stdio.h>
 int main(){
-    int a,b,c;
-    scanf("%d %d %d", &a, &b, &c);
-
-    /*finding max*/
-    if(a>b && a>c){
-        printf("Max = %d", a);
-    }
-    else if(b>a && b>c){
-        printf("Max = %d", b);
-    }
-    else if(c>a && c>b){
-        printf("Max = %d", c);
-    }
- printf(" ");
+    int A,B,C;
+    scanf("%d %d %d", &A, &B, &C);
 
  /*finding min*/
+ if(B>A && C>A){
+    printf("%d ", A);
+ }
+  else if(A>B && C>B){
+    printf("%d ", B);
+ }
+ else if(B>C && A>C){
+    printf("%d ", C);
+ }
+ printf(" ");
+  /*finding max*/
+    if(A>B && A>C){
+        printf("%d ", A);
+    }
+    else if(B>A && B>C){
+        printf("%d ", B);
+    }
+    else if(C>A && C>B){
+        printf("%d ", C);
+    }
 
- if(b>a && c>a){
-    printf("Min = %d", a);
- }
-  else if(a>b && c>b){
-    printf("Min = %d", b);
- }
- else if(b>c && a>c){
-    printf("Min = %d", c);
- }
     return 0;
 }
