@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 int main() {
     int N;
     scanf("%d", &N);
@@ -7,9 +7,8 @@ int main() {
     for (int i = 0; i < N; i++) {
         int value;
         scanf("%d", &value); 
-        sum += abs(value); 
+        sum += value; 
     }
-    printf("%lld\n", sum);
-    
+    printf("%lld\n", llabs(sum)); 
     return 0;
 }
