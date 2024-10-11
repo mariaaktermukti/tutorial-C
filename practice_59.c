@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<string.h>
-
 int main() {
     FILE *file;
     char name[200] = "CSE is very interesting subject.";
