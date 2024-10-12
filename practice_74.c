@@ -1,9 +1,10 @@
 #include <stdio.h>
 int main() {
-    int A, B, C, D;
-    scanf("%d %d %d %d", &A, &B, &C, &D);
-    int X = (A * B) - (C * D);
-    printf("Difference = %d\n", X);
+    long long A, B, C, D;
+    scanf("%lld %lld %lld %lld", &A, &B, &C, &D);
+    long long X = (A * B) - (C * D);
+    printf("Difference = %lld\n", X);
 
     return 0;
 }
+
