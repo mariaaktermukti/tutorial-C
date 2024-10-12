@@ -2,9 +2,9 @@
 int main() {
     double X, P;
     scanf("%lf %lf", &X, &P);
-    double discount_fraction = X / 100.0;
-    double original_price = P / (1 - discount_fraction);
+    double original_price = P / (1.0 - X / 100.0);
     printf("%.2lf\n", original_price);
+
     return 0;
 }
 
