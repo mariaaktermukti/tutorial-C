@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h> // Include ctype.h for tolower
-
 void toSpelledOut(int number, char* str) {
     char* digitWords[] = {
         "ZERO", "ONE", "TWO", "THREE", "FOUR", 
