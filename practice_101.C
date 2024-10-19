@@ -20,7 +20,6 @@ int main() {
             valid = 0;
         }
     }
-
     if (valid) {
         printf("Yes\n");
     } 
