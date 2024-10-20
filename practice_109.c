@@ -1,7 +1,8 @@
 #include<stdio.h>
 int main(){
     char str[1000];
-    scanf("%s", str);
+    scanf("%[^\n]s", str); 
+    //  because of %[^\n]s --> full line will print
     printf("%s", str); 
     // // 
     // input: mukti is my name;
