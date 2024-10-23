@@ -1,3 +1,6 @@
+/*Summer 23 (set_B)--> Ques:1*/
+
+
 #include <stdio.h>
 int is_palindrome(int x) {
     int original = x;
