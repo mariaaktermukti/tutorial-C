@@ -1,7 +1,6 @@
 #include<stdio.h>
 int checkPalindrome(int num);  
 
-
 int main() {
     int num;
     printf("Enter a number for checking palindrome: ");
