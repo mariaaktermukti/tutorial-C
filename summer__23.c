@@ -1,3 +1,5 @@
+/*Summer 23 (set_B)--> Ques:2*/
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
