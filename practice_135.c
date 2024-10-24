@@ -1,8 +1,8 @@
 /*Code force__ (string_C)*/
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 int main() {
-    char X[20], Y[20];
+    char X[21], Y[21]; 
     scanf("%s %s", X, Y);
     int compare = strcmp(X, Y);  
 
@@ -12,5 +12,6 @@ int main() {
     else {
         printf("%s\n", Y);
     }
+
     return 0;
 }
