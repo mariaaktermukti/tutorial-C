@@ -1,4 +1,4 @@
-/*Code force__ (string)*/
+/*Code force__ (string1)*/
 #include <stdio.h>
 #include <string.h>
 int main() {
