@@ -2,19 +2,9 @@
 #include <string.h>
 #include <stdlib.h>
 
-void sortString(char *str) {
-    int len = strlen(str);
-    // Using bubble sort to sort the string characters
-    for (int i = 0; i < len - 1; i++) {
-        for (int j = 0; j < len - i - 1; j++) {
-            if (str[j] > str[j + 1]) {
-                // Swap characters
-                char temp = str[j];
-                str[j] = str[j + 1];
-                str[j + 1] = temp;
-            }
-        }
-    }
+// Function to compare two characters (used in qsort)
+int compare(const void *a, const void *b) {
+    return (*(char *)a - *(char *)b;
 }
 
 int main() {
@@ -22,30 +12,85 @@ int main() {
     scanf("%s", S); // Read the input string
 
     int len = strlen(S);
-    char minString[10001]; // To store the minimum string
-    strcpy(minString, S); // Initialize with the original string
-
-    // Iterate through possible split points
+    
+    // To hold the smallest string found
+    char minString[10001] = {0};
+    
+    // Start with a string that's larger than any possible result
+    strcpy(minString, S);
+    
+    // Try every possible split point
     for (int i = 1; i < len; i++) {
-        // Split the string into two parts
-        char X[10001];
-        char Y[10001];
+        // Create two parts
+        char part1[10001], part2[10001];
+
+        // Copy the first part and null terminate it
+        strncpy(part1, S, i);
+        part1[i] = '\0';
+
+        // Copy the second part and null terminate it
+        strcpy(part2, S + i);
         
-        strncpy(X, S, i); // Copy first part
-        X[i] = '\0'; // Null-terminate X
-
-        strncpy(Y, S + i, len - i); // Copy second part
-        Y[len - i] = '\0'; // Null-terminate Y
-
         // Sort both parts
-        sortString(X);
-        sortString(Y);
+        qsort(part1, i, sizeof(char), compare);
+        qsort(part2, len - i, sizeof(char), compare);
 
         // Concatenate the sorted parts
         char combined[10001];
-        sprintf(combined, "%s%s", X, Y); // Combine sorted X and Y
+        snprintf(combined, sizeof(combined), "%s%s", part1, part2);
 
-        // Update minString if a smaller combination is found
+        // Check if this combined string is smaller
+        if (strcmp(combined, minString) < 0) {
+            strcpy(minString, combined);
+        }
+    }
+
+    // Print the smallest string
+    printf("%s\n", minString);
+    return 0;
+}
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+// Function to compare two characters (used in qsort)
+int compare(const void *a, const void *b) {
+    return (*(char *)a - *(char *)b;
+}
+
+int main() {
+    char S[10001]; // Input string (up to 10,000 characters)
+    scanf("%s", S); // Read the input string
+
+    int len = strlen(S);
+    
+    // To hold the smallest string found
+    char minString[10001] = {0};
+    
+    // Start with a string that's larger than any possible result
+    strcpy(minString, S);
+    
+    // Try every possible split point
+    for (int i = 1; i < len; i++) {
+        // Create two parts
+        char part1[10001], part2[10001];
+
+        // Copy the first part and null terminate it
+        strncpy(part1, S, i);
+        part1[i] = '\0';
+
+        // Copy the second part and null terminate it
+        strcpy(part2, S + i);
+        
+        // Sort both parts
+        qsort(part1, i, sizeof(char), compare);
+        qsort(part2, len - i, sizeof(char), compare);
+
+        // Concatenate the sorted parts
+        char combined[10001];
+        snprintf(combined, sizeof(combined), "%s%s", part1, part2);
+
+        // Check if this combined string is smaller
         if (strcmp(combined, minString) < 0) {
             strcpy(minString, combined);
         }
