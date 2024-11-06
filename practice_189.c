@@ -29,7 +29,7 @@ int main() {
     // Calculate the average
     double avg = calculateAverage(A, N);
     
-    // Print the average with 6 digits after the decimal
+    // Print the average with exactly 6 digits after the decimal
     printf("%.6lf\n", avg);
     
     return 0;
