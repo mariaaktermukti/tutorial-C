@@ -19,23 +19,17 @@ void swapRows(int matrix[][100], int N, int M) {
 int main() {
     int N, M;
     scanf("%d %d", &N, &M);
-    
     int matrix[100][100];
-    
-    // Input the matrix values
+
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             scanf("%d", &matrix[i][j]);
         }
     }
-    
-    // Perform column swap
+
     swapColumns(matrix, N, M);
-    
-    // Perform row swap
     swapRows(matrix, N, M);
     
-    // Output the modified matrix
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             printf("%d ", matrix[i][j]);
