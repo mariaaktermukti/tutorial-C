@@ -1,34 +1,19 @@
 #include <stdio.h>
-void printSpaces(int spaces) {
-    if (spaces == 0) {
-        return;
+void printPyramid(int n) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 0; j < n - i; j++) {
+            printf(" ");
+        }
+        for (int k = 0; k < 2 * i - 1; k++) {
+            printf("*");
+        }
+        printf("\n");
     }
-    printf(" ");
-    printSpaces(spaces - 1);
 }
-void printStars(int stars) {
-    if (stars == 0) {
-        return;
-    }
-    printf("*");
-    printStars(stars - 1);
-}
-void printPyramid(int n, int currentRow) {
-    if (currentRow > n) {
-        return;
-    }
-    int spaces = n - currentRow;
-    int stars = 2 * currentRow - 1;
-    printSpaces(spaces);
-    printStars(stars);
-    printf("\n");
-    printPyramid(n, currentRow + 1);
-}
-
 int main() {
     int N;
     scanf("%d", &N);
 
-    printPyramid(N, 1); 
+    printPyramid(N); 
     return 0;
 }
