@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 int recursive_sum(int arr[], int n) {
-    // Base case: if array size is 1, return the first element
-    if (n == 1) {
-        return arr[0];
+    // Base case: if there are no elements, the sum is 0
+    if (n == 0) {
+        return 0;
     }
-    // Recursive case: return the last element + sum of the rest
+    // Recursive case: sum the last element with the result of the rest
     return arr[n - 1] + recursive_sum(arr, n - 1);
 }
 
